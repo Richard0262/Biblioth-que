@@ -1,1 +1,13 @@
-<p>book-list works!</p>
+<section class="container">
+  <h2>Ma Bibliothèque</h2>
+
+  <div class="grid">
+    @for (item of myBooks(); track item.id) {
+      <app-book-item [book]="item" />
+    } @empty {
+      <p>Votre bibliothèque est vide. Commencez par ajouter un livre !</p>
+    }
+  </div>
+</section>
+
+

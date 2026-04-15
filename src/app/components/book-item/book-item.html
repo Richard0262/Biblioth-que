@@ -1,1 +1,9 @@
-<p>book-item works!</p>
+<div class="book-card">
+  <img src="  {{ book().thumbnail }}" alt="{{ book().title }}">
+  <div class="info">
+    <h3>{{ book().title }}</h3>
+    <p>{{ book().authors.join(', ') }}</p>
+    <span class="badge">{{ book().status }}</span>
+  </div>
+</div>
+

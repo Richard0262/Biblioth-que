@@ -1,0 +1,18 @@
+<div class="search-box">
+  <input 
+    type="text" 
+    [ngModel]="query()" 
+    (ngModelChange)="query.set($event)"
+    (keyup.enter)="search()"
+    placeholder="Rechercher un titre ou un auteur...">
+  <button (click)="search()">Chercher</button>
+</div>
+
+<div class="search-results">
+  @for (book of results(); track book.id) {
+    <div class="result-item">
+      <span>{{ book.title }} - {{ book.authors[0] }}</span>
+      <button (click)="addToLibrary(book)">+</button>
+    </div>
+  }
+</div>
